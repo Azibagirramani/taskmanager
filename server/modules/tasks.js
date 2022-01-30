@@ -25,14 +25,29 @@ exports.add = async function (req, res, next) {
   }
 };
 
-exports.patch = function (req, res) {};
+exports.getById = async function (req, res) {
+  const { id } = req.params;
+
+  try {
+    const response = await Task.findById(id)
+
+    if (response == null){
+      res.json({})
+      return
+    }
+    res.json(response)
+  } catch (error) {
+    res.status(500).json({msg: "unable to process request"});
+  }
+
+};
 
 exports.delete = async function (req, res) {
   const { id } = req.params;
 
   try {
-    const remove = await Task.deleteOne({ _id: id });
-    res.json({ count: remove.deletedCount });
+    await Task.findByIdAndDelete({ _id: id })
+    res.json({ msg: "deleted" })
   } catch (error) {
     res.status(500).json({msg: "unable to process request"});
   }
