@@ -4,7 +4,7 @@ const dev = "mongodb://localhost:27017/?readPreference=primary&ssl=false"
 
 const prd = "mongodb+srv://admin:g1yS1G2Y2LFB9dMF@server.5d9pa.mongodb.net/slug?retryWrites=true&w=majority"
 
-mongoose.connect(dev,
+mongoose.connect(prd,
   {
     useNewUrlParser: true,
     useUnifiedTopology: true
