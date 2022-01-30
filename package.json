@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "simple todo app like clickup",
+  "main": "entry",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "run:dev": "nodemon server/entry.js",
+    "start": "node server/entry.js"
+  },
+  "author": "kelvin mansi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "joi": "^17.6.0",
+    "mongodb": "^4.3.1",
+    "mongoose": "^6.1.8",
+    "morgan": "^1.10.0",
+    "nodemon": "^2.0.15"
+  }
+}
